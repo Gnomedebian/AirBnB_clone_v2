@@ -19,6 +19,6 @@ echo "<html>
         Holberton School
     </body>
 </html>" | sudo tee /data/web_static/releases/test/index.html
-loc="\\\tlocation /hbnb_static {\n\t\talias /data/web_static/current/;\n\t\tautoindex off;\n\t}"
+loc="\\\tlocation /hbnb_static {\n\t\talias /data/web_static/current/;\n\t\tindex index.html index.htm;\n\t}"
 sed -i "53i $loc" /etc/nginx/sites-available/default
 sudo service nginx restart
