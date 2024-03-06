@@ -8,9 +8,6 @@ sudo mkdir /data/web_static/
 sudo mkdir /data/web_static/releases/
 sudo mkdir /data/web_static/shared/
 sudo mkdir /data/web_static/releases/test/
-sudo touch /data/web_static/releases/test/index.html
-sudo ln -sf /data/web_static/releases/test/ /data/web_static/current
-sudo chown -R "ubuntu":"ubuntu" /data/
 echo "<html>
     <head>
     </head>
@@ -18,6 +15,8 @@ echo "<html>
         Holberton School
     </body>
 </html>" | sudo tee /data/web_static/releases/test/index.html
+sudo ln -sf /data/web_static/releases/test/ /data/web_static/current
 loc="\\\tlocation /hbnb_static {\n\t\talias /data/web_static/current/;\n\t\tindex index.html index.htm;\n\t}"
+sudo chown -R ubuntu:ubuntu /data/
 sed -i "53i $loc" /etc/nginx/sites-available/default
 sudo service nginx restart
