@@ -31,7 +31,7 @@ def text(text):
 def textPy(textPy):
     '''function returns variable'''
     new_text = textPy.replace('_', ' ')
-    return f'C {new_text}'
+    return f'Python {new_text}'
 
 
 if __name__ == '__main__':
