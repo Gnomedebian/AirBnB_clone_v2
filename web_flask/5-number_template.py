@@ -3,7 +3,8 @@
 Starts a Flask web application.
 """
 
-from flask import Flask, render_template
+from flask import Flask
+from flask import render_template
 
 app = Flask(__name__)
 
@@ -39,9 +40,6 @@ def text_py(text='is cool'):
 def number(n):
     '''function returns n is number'''
     return f'{n} is a number'
-
-
-app = Flask(__name__)
 
 
 @app.route('/number_template/<int:n>')
