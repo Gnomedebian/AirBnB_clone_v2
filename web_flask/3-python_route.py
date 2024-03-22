@@ -27,9 +27,9 @@ def text(text):
     return f'C {text}'
 
 
-@app.route("/python", strict_slashes=False)
+@app.route('/python', strict_slashes=False)
 @app.route('/python/<text>', strict_slashes=False)
-def text_py(text = 'is cool'):
+def text_py(text='is cool'):
     '''function returns variable'''
     new_text = text.replace('_', ' ')
     return f'Python {new_text}'
