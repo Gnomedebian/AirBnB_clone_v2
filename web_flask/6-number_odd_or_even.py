@@ -7,8 +7,6 @@ from flask import Flask
 from flask import render_template
 
 app = Flask(__name__)
-app.jinja_env.trim_blocks = True
-app.jinja_env.lstrip_blocks = True
 
 
 @app.route('/', strict_slashes=False)
@@ -51,7 +49,7 @@ def number_template(n):
 
 
 @app.route('/number_odd_or_even/<int:n>')
-def number_template(n):
+def number_odd_or_even(n):
     '''even or odd'''
     return render_template('6-number_odd_or_even.html', n=n)
 
