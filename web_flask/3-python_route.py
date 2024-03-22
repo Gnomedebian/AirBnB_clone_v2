@@ -28,9 +28,9 @@ def text(text):
 
 
 @app.route('/python/<text>')
-def textPy(textPy):
+def text_py(text):
     '''function returns variable'''
-    new_text = textPy.replace('_', ' ')
+    new_text = text.replace('_', ' ')
     return f'Python {new_text}'
 
 
