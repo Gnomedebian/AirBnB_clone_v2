@@ -20,15 +20,15 @@ def hbnb():
     return 'HBNB'
 
 
-@app.route('/c/<text>')
+@app.route('/c/<text>', strict_slashes=False)
 def text(text):
     '''function returns variable'''
     text = text.replace('_', ' ')
     return f'C {text}'
 
 
-@app.route('/python/<text>')
-def text_py(text):
+@app.route('/python/<text>', strict_slashes=False)
+def text_py(text = 'is cool'):
     '''function returns variable'''
     new_text = text.replace('_', ' ')
     return f'Python {new_text}'
